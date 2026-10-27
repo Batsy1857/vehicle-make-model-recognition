@@ -19,7 +19,7 @@
 
 | Dataset | Image/class counts verified? | Label-map saved? | Split manifests and SHA256 | Leakage/near-duplicate audit | Status |
 | --- | --- | --- | --- | --- | --- |
-| Pakistani | 3,847 readable / 48 classes | Candidate map; final pending | Clean candidate: train 2,610; val 463; test 751; excluded 23 | All 35 dHash candidates reviewed by user as near-identical; other unflagged overlaps possible | Candidate reconciled; awaiting freeze verification |
+| Pakistani | 3,847 readable / 48 classes | Frozen 48-class map | Final: train 2,610; val 463; test 751; excluded 23 | 35 human-reviewed dHash candidate pairs; 23 original training images excluded; other overlaps possible | **Final overlap-screened manifest committed** |
 | Stanford Cars | Pending | Pending | Pending | Pending | Awaiting data |
 
 Record exactly how Pakistani video-neighbor images were handled if source/group metadata is available. For Stanford Cars, document that the official test split remained untouched during training and model selection.
@@ -64,6 +64,15 @@ Locally executed `04_reconcile_overlap_splits.ipynb`, user-reported results:
 - The 23 excluded are **distinct publisher-training images**, not simply assumed from flagged pair count. The original 3,096 publisher-training images now comprise 2,610 train + 463 val + 23 excluded.
 - User visually reviewed all 35 dHash candidate pairs as same car in apparently near-identical imagery. Exact byte-hash duplicates were zero earlier; human review does **not** guarantee all other overlaps were found.
 - **Next:** run `05_freeze_pakistan_split.ipynb` and verify final manifest SHA-256 before starting CNN experiments. No accuracy/training-time measurements exist yet.
+
+### Pakistani split frozen and committed — 28 October 2026
+
+- Final verified repository artifacts on `main`: `splits/pakistan/final_manifest.csv`, `class_to_idx.json`, `split_metadata.json`, and `candidate_pair_review.csv`.
+- Final status in `split_metadata.json`: `APPROVED_FOR_MODEL_TRAINING_OVERLAP_SCREENED`.
+- Final manifest SHA-256: `11ebb90a7a4530a2707f4d086131f93f4b3c91cae013bc6add0bc2417bff0f32`.
+- Counts **train 2,610 / val 463 / test 751 / excluded_test_overlap 23**. All 48 classes in train/val/test. Original publisher test membership remains unchanged.
+- The previous sections record the sequential candidate and review history; those older "pending" statements were true at the time of the intermediate step. **This entry supersedes their status, not their observations.**
+- **E1–E4 remain Not started**; no model metrics have yet been measured.
 
 ## C. Run record template
 
