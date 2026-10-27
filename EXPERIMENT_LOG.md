@@ -19,7 +19,7 @@
 
 | Dataset | Image/class counts verified? | Label-map saved? | Split manifests and SHA256 | Leakage/near-duplicate audit | Status |
 | --- | --- | --- | --- | --- | --- |
-| Pakistani | 3,847 readable / 48 classes | Pending | Publisher train/test present; manifests pending | Exact duplicates 0; near-duplicates pending | Initial audit complete; validation pending |
+| Pakistani | 3,847 readable / 48 classes | Candidate map only | Candidate train/val/test 2,631/465/751; approval pending | Exact duplicates 0; dHash candidate pairs 23 + 12 awaiting manual review | Candidate split generated, **not final** |
 | Stanford Cars | Pending | Pending | Pending | Pending | Awaiting data |
 
 Record exactly how Pakistani video-neighbor images were handled if source/group metadata is available. For Stanford Cars, document that the official test split remained untouched during training and model selection.
@@ -36,6 +36,16 @@ Results from the user-executed `01_data_exploration.ipynb` (Mendeley 2022 Versio
 - Follow-up class coverage (user measured): **48** classes in each publisher split; no train-only or test-only classes. Original publisher training min/class **13**, max/class **270**; the 10 smallest range from **13 to 23** images.
 - Pending: human review of labels, perceptual near-duplicate/video-neighbor checks, validation manifest, class index map.
 - The first visualization used test images due to filename sorting; notebook corrected in this PR to sample training images only. No training was performed.
+
+### Candidate split + perceptual-hash screen — 27 October 2026
+
+Results reported from locally run `02_prepare_splits.ipynb`:
+- Provisional stratified split (seed 42, 15% of publisher training): **train 2,631**, **validation 465**, **test 751**.
+- Minimum examples per class: **train 11**, **validation 2**, **test 3**.
+- dHash candidate near-similar **PAIRS** at Hamming distance ≤3: **23** between publisher train/test and **12** between candidate train/validation.
+- These are **not confirmed duplicate counts**, and a pair count does not imply the same number of unique files.
+- **Action:** inspect all 35 candidates side by side using `03_review_near_duplicates.ipynb`. Do not approve split or alter publisher test partition before review. dHash may miss other visual similarities.
+- Model runs remain **Not started**. No accuracy or efficiency results are available.
 
 ## C. Run record template
 
