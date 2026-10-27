@@ -19,7 +19,7 @@
 
 | Dataset | Image/class counts verified? | Label-map saved? | Split manifests and SHA256 | Leakage/near-duplicate audit | Status |
 | --- | --- | --- | --- | --- | --- |
-| Pakistani | 3,847 readable / 48 classes | Candidate map only | Candidate train/val/test 2,631/465/751; approval pending | Exact duplicates 0; dHash candidate pairs 23 + 12 awaiting manual review | Candidate split generated, **not final** |
+| Pakistani | 3,847 readable / 48 classes | Candidate map; final pending | Clean candidate: train 2,610; val 463; test 751; excluded 23 | All 35 dHash candidates reviewed by user as near-identical; other unflagged overlaps possible | Candidate reconciled; awaiting freeze verification |
 | Stanford Cars | Pending | Pending | Pending | Pending | Awaiting data |
 
 Record exactly how Pakistani video-neighbor images were handled if source/group metadata is available. For Stanford Cars, document that the official test split remained untouched during training and model selection.
@@ -54,6 +54,16 @@ Results reported from locally run `02_prepare_splits.ipynb`:
 - **Action planned:** preserve original publisher test images; exclude distinct publisher-training images connected to confirmed test duplicates from model development, and keep connected remaining train/validation images in the same partition.
 - Actual number excluded and new split sizes are **not yet measured**. Do not claim the candidate 2,631/465/751 split is leak-free. Reconciliation notebook `04_reconcile_overlap_splits.ipynb` awaits completed review verdicts.
 - All four model experiments remain **not started**.
+
+### Cleaned Pakistani candidate split — 27 October 2026
+
+Locally executed `04_reconcile_overlap_splits.ipynb`, user-reported results:
+- **train 2,610**, **val 463**, **test 751**, **excluded_test_overlap 23**.
+- **48** classes represented in each active split; per-class minimum **train 11, val 2, test 3**.
+- Original publisher test membership preserved, 751 images; no original images deleted.
+- The 23 excluded are **distinct publisher-training images**, not simply assumed from flagged pair count. The original 3,096 publisher-training images now comprise 2,610 train + 463 val + 23 excluded.
+- User visually reviewed all 35 dHash candidate pairs as same car in apparently near-identical imagery. Exact byte-hash duplicates were zero earlier; human review does **not** guarantee all other overlaps were found.
+- **Next:** run `05_freeze_pakistan_split.ipynb` and verify final manifest SHA-256 before starting CNN experiments. No accuracy/training-time measurements exist yet.
 
 ## C. Run record template
 
