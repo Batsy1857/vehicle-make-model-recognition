@@ -47,6 +47,14 @@ Results reported from locally run `02_prepare_splits.ipynb`:
 - **Action:** inspect all 35 candidates side by side using `03_review_near_duplicates.ipynb`. Do not approve split or alter publisher test partition before review. dHash may miss other visual similarities.
 - Model runs remain **Not started**. No accuracy or efficiency results are available.
 
+### Human near-duplicate review — 27 October 2026
+
+- The dataset reviewer reports that **all 35 dHash-flagged pairs visually show what appear to be the same car in identical or near-identical imagery**. This is a **human assessment**, not equality of raw image bytes: earlier SHA-256 scanning found zero byte-identical duplicate groups.
+- Same make/model labels alone are not evidence of leakage; confirm pairs depict the **same physical vehicle** in a repeated photograph or related video frames and record verdicts in `splits/pakistan/candidate_pair_review.csv`.
+- **Action planned:** preserve original publisher test images; exclude distinct publisher-training images connected to confirmed test duplicates from model development, and keep connected remaining train/validation images in the same partition.
+- Actual number excluded and new split sizes are **not yet measured**. Do not claim the candidate 2,631/465/751 split is leak-free. Reconciliation notebook `04_reconcile_overlap_splits.ipynb` awaits completed review verdicts.
+- All four model experiments remain **not started**.
+
 ## C. Run record template
 
 Copy this section once for **each execution**, including failures and restarts. Use distinct IDs such as `E1-run01`, `E1-run02`. Never overwrite past outcomes.
