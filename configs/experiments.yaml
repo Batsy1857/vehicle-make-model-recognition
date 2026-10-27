@@ -1,0 +1,144 @@
+# DRAFT v0.1 — reviewed by team after data audit and GPU smoke tests.
+# Values here are PLANNED settings, not evidence of experiments or measured results.
+schema_version: 1
+project_name: vehicle-make-model-recognition
+status: proposed
+random_seed: 42
+
+datasets:
+  pakistan:
+    source: https://data.mendeley.com/datasets/hj3vvx5946/1
+    expected_images: 3847
+    expected_classes: 48
+    verified_images: null
+    verified_classes: null
+    data_dir: data/pakistan
+    split_manifest_dir: splits/pakistan
+    split:
+      first_choice: reuse_verified_publisher_split_if_available
+      fallback: group_aware_stratified_if_groups_identifiable_else_stratified
+      fallback_fractions:
+        train: 0.70
+        val: 0.15
+        test: 0.15
+      group_definition: source_video_or_same_vehicle_if_metadata_available
+      audit_near_duplicates: true
+      test_is_held_out: true
+
+  stanford_cars:
+    source: https://ieeexplore.ieee.org/abstract/document/9460843/
+    expected_images: 16185
+    expected_classes: 196
+    verified_images: null
+    verified_classes: null
+    data_dir: data/stanford_cars
+    split_manifest_dir: splits/stanford_cars
+    split:
+      first_choice: preserve_official_train_test
+      val_fraction_of_official_train: 0.15
+      val_method: seeded_stratified
+      test_is_held_out: true
+
+models:
+  xception:
+    timm_name: legacy_xception.tf_in1k
+    weights: imagenet_1k
+    original_pretrained_input_size: [299, 299]
+    classifier: replace_for_dataset_num_classes
+  convnext_tiny:
+    timm_name: convnext_tiny.fb_in1k
+    weights: imagenet_1k
+    original_pretrained_input_size: [224, 224]
+    classifier: replace_for_dataset_num_classes
+
+data_pipeline:
+  # Same geometry and stochastic augmentations across architectures.
+  # Normalization intentionally differs: match each pretrained checkpoint.
+  input_size: [224, 224]
+  color_mode: RGB
+  interpolation: bicubic
+  normalization: pretrained_checkpoint_mean_std
+  train:
+    random_resized_crop:
+      scale: [0.80, 1.00]
+      ratio: [0.90, 1.10]
+    random_horizontal_flip_probability: 0.50
+    color_jitter:
+      brightness: 0.10
+      contrast: 0.10
+      saturation: 0.10
+      hue: 0.02
+  evaluation:
+    resize_shorter_side: 256
+    center_crop: [224, 224]
+    no_random_augmentations: true
+
+training:
+  batch_size: 16
+  eval_batch_size: 16
+  num_workers: 2
+  loss: cross_entropy
+  optimizer: AdamW
+  weight_decay: 0.01
+  gradient_accumulation_steps: 1
+  mixed_precision: cuda_only
+  checkpoint_selection: max_validation_macro_f1
+  stages:
+    head_only:
+      enabled: true
+      freeze_backbone: true
+      epochs_max: 3
+      learning_rate: 0.001
+    partial_fine_tune:
+      enabled: true
+      unfreeze: final_backbone_stage_plus_classifier
+      epochs_max: 8
+      learning_rate: 0.00001
+  early_stopping:
+    enabled: true
+    monitor: validation_macro_f1
+    patience: 3
+  select_hyperparameters_using_test_set: false
+
+evaluation:
+  primary_metric: top1_accuracy
+  classification_metrics:
+    - top1_accuracy
+    - top5_accuracy
+    - macro_f1
+    - per_class_precision_recall_f1
+    - confusion_matrix
+  efficiency_metrics:
+    - total_parameters
+    - trainable_parameters
+    - model_size_mb
+    - train_seconds_per_epoch
+    - total_train_seconds
+    - inference_ms_per_image_batch1
+    - inference_ms_per_image_batch16
+    - peak_gpu_memory_mb
+  runtime_benchmark:
+    same_device_required: true
+    evaluation_mode: true
+    use_inference_mode: true
+    include_image_preprocessing: false
+    include_dataloader: false
+    warmup_iterations: 20
+    timed_iterations: 100
+    synchronize_gpu_before_and_after_timing: true
+    report_median_and_p95: true
+  final_test_evaluation: once_after_model_selection
+
+artifacts:
+  record_versions: [python, torch, torchvision, timm, cuda]
+  record_device_model: true
+  record_split_manifest_hashes: true
+  record_checkpoint_path_and_config_commit: true
+  store_metrics: results/metrics.csv
+  log_file: EXPERIMENT_LOG.md
+
+experiments:
+  E1: {dataset: pakistan, model: xception, status: planned}
+  E2: {dataset: pakistan, model: convnext_tiny, status: planned}
+  E3: {dataset: stanford_cars, model: xception, status: planned}
+  E4: {dataset: stanford_cars, model: convnext_tiny, status: planned}
