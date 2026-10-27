@@ -33,7 +33,8 @@ Results from the user-executed `01_data_exploration.ipynb` (Mendeley 2022 Versio
 - **0** exact SHA-256 duplicate groups; **0** across-split exact duplicate groups.
 - Class imbalance: **337** Toyota_corolla_2016, **336** Suzuki_cultus_2018, **16** Suzuki_carry (total across train/test).
 - Sample images vary in viewpoint, lighting and background; plates are obscured in illustrated cases.
-- Pending: per-split class coverage, human review of labels, perceptual near-duplicate/video-neighbor checks, validation manifest, class index map.
+- Follow-up class coverage (user measured): **48** classes in each publisher split; no train-only or test-only classes. Original publisher training min/class **13**, max/class **270**; the 10 smallest range from **13 to 23** images.
+- Pending: human review of labels, perceptual near-duplicate/video-neighbor checks, validation manifest, class index map.
 - The first visualization used test images due to filename sorting; notebook corrected in this PR to sample training images only. No training was performed.
 
 ## C. Run record template

@@ -17,6 +17,8 @@ datasets:
     split_manifest_dir: splits/pakistan
     split:
       first_choice: preserve_observed_publisher_train_test
+      validation_fraction_of_publisher_train: 0.15
+      val_method: seeded_stratified_with_near_duplicate_review
       fallback: group_aware_stratified_if_groups_identifiable_else_stratified
       fallback_fractions:
         train: 0.70
