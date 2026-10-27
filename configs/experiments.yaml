@@ -10,12 +10,13 @@ datasets:
     source: https://data.mendeley.com/datasets/hj3vvx5946/1
     expected_images: 3847
     expected_classes: 48
-    verified_images: null
-    verified_classes: null
+    verified_images: 3847
+    verified_classes: 48
+    audited_publisher_split_counts: {train: 3096, test: 751}
     data_dir: data/pakistan
     split_manifest_dir: splits/pakistan
     split:
-      first_choice: reuse_verified_publisher_split_if_available
+      first_choice: preserve_observed_publisher_train_test
       fallback: group_aware_stratified_if_groups_identifiable_else_stratified
       fallback_fractions:
         train: 0.70
