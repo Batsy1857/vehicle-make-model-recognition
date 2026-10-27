@@ -1,6 +1,8 @@
-# Lightweight packages for the first dataset-audit notebook.
-# Use a clean virtual environment; CNN training dependencies come later.
+# Notebook 01 (image audit) and Notebook 02 (candidate split)
+# Keep model-training packages in a separate install step.
 pillow>=10,<13
 pandas>=2.2,<3
 matplotlib>=3.9,<4
 ipykernel>=6.29,<8
+scikit-learn>=1.5,<2
+PyYAML>=6,<7
