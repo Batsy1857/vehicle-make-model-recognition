@@ -19,10 +19,22 @@
 
 | Dataset | Image/class counts verified? | Label-map saved? | Split manifests and SHA256 | Leakage/near-duplicate audit | Status |
 | --- | --- | --- | --- | --- | --- |
-| Pakistani | Pending | Pending | Pending | Pending | Awaiting data |
+| Pakistani | 3,847 readable / 48 classes | Pending | Publisher train/test present; manifests pending | Exact duplicates 0; near-duplicates pending | Initial audit complete; validation pending |
 | Stanford Cars | Pending | Pending | Pending | Pending | Awaiting data |
 
 Record exactly how Pakistani video-neighbor images were handled if source/group metadata is available. For Stanford Cars, document that the official test split remained untouched during training and model selection.
+
+### Pakistani data audit — 27 October 2026
+
+Results from the user-executed `01_data_exploration.ipynb` (Mendeley 2022 Version 1):
+- **3,847** images scanned and decoded; **0** unreadable.
+- **48** distinct labels inferred from class directory names.
+- Existing publisher train/test split: **3,096 train**, **751 test**; these remain untouched.
+- **0** exact SHA-256 duplicate groups; **0** across-split exact duplicate groups.
+- Class imbalance: **337** Toyota_corolla_2016, **336** Suzuki_cultus_2018, **16** Suzuki_carry (total across train/test).
+- Sample images vary in viewpoint, lighting and background; plates are obscured in illustrated cases.
+- Pending: per-split class coverage, human review of labels, perceptual near-duplicate/video-neighbor checks, validation manifest, class index map.
+- The first visualization used test images due to filename sorting; notebook corrected in this PR to sample training images only. No training was performed.
 
 ## C. Run record template
 
