@@ -150,3 +150,12 @@ Copy this section once for **each execution**, including failures and restarts. 
 - [ ] Results table matches notebook outputs, not handwritten estimates
 - [ ] Plots and confusion/error analysis reproduced from saved outputs
 - [ ] All five presenters know which numbers are actual measurements
+
+
+## Milestone 3
+- Both pretrained architectures initialized successfully for 48 and 196 classes.
+- All four forward passes succeeded at 224 × 224 resolution.
+- Head-only freezing and partial fine-tuning were verified.
+- Trainable parameter counts were recorded.
+- No optimizer steps, training epochs or accuracy measurements were performed.
+
