@@ -30,17 +30,35 @@ datasets:
 
   stanford_cars:
     source: https://ieeexplore.ieee.org/abstract/document/9460843/
+    download_mirror: https://huggingface.co/datasets/tanganke/stanford_cars
+    revision_sha: 9abf6cf7d6dfa7b95152a0d6e791ea9435b47a40
+
     expected_images: 16185
     expected_classes: 196
-    verified_images: null
-    verified_classes: null
+    verified_images: 16185
+    verified_classes: 196
+
     data_dir: data/stanford_cars
-    split_manifest_dir: splits/stanford_cars
+    split_manifest_dir: splits/stanford
+
     split:
       first_choice: preserve_official_train_test
       val_fraction_of_official_train: 0.15
-      val_method: seeded_stratified
+      val_method: seeded_stratified_with_near_duplicate_review
       test_is_held_out: true
+
+    verified_split_counts:
+      train: 6893
+      val: 1214
+      test: 8041
+      excluded: 37
+
+    overlap_audit:
+      reviewed_pairs: 39
+      confirmed_duplicate_pairs: 39
+      excluded_unique_images: 37
+
+    manifest_sha256: 968552b26c93eb1e163edc99f92e0bc722d710a547d5f290a362ae26224c0ed2
 
 models:
   xception:

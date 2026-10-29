@@ -1,0 +1,31 @@
+{
+  "status": "VERIFIED",
+  "dataset": "tanganke/stanford_cars",
+  "revision_sha": "9abf6cf7d6dfa7b95152a0d6e791ea9435b47a40",
+  "original_counts": {
+    "train": 8144,
+    "test": 8041
+  },
+  "original_image_count": 16185,
+  "classes": 196,
+  "seed": 42,
+  "validation_fraction": 0.15,
+  "planned_counts_before_review": {
+    "train": 6922,
+    "val": 1222,
+    "test": 8041
+  },
+  "counts_after_reviewed_exclusions": {
+    "train": 6893,
+    "val": 1214,
+    "excluded": 37,
+    "test": 8041
+  },
+  "potential_cross_split_overlap_pairs": 39,
+  "unreviewed_pairs": 0,
+  "confirmed_pairs": 39,
+  "excluded_images": 37,
+  "images_exported_without_reencoding": true,
+  "manifest_sha256": "968552b26c93eb1e163edc99f92e0bc722d710a547d5f290a362ae26224c0ed2",
+  "verified_at_utc": "2026-10-29T15:16:51.016349+00:00"
+}

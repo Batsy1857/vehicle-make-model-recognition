@@ -1,0 +1,40 @@
+pair_id,path_a,split_a,class_a,path_b,split_b,class_b,dhash_distance,identical_bytes,review_decision
+0468f0997afac482,data/stanford_cars/test/06251.jpg,test,Acura ZDX Hatchback 2012,data/stanford_cars/train/01661.jpg,train,Hyundai Sonata Hybrid Sedan 2012,3,false,confirmed_duplicate
+07c319becb829a76,data/stanford_cars/test/03518.jpg,test,Rolls-Royce Ghost Sedan 2012,data/stanford_cars/train/03592.jpg,train,Rolls-Royce Phantom Sedan 2012,0,true,confirmed_duplicate
+07cabf0daa29df31,data/stanford_cars/test/00240.jpg,test,Ferrari 458 Italia Coupe 2012,data/stanford_cars/train/00205.jpg,train,Ferrari 458 Italia Convertible 2012,2,false,confirmed_duplicate
+17da92a241e692be,data/stanford_cars/test/05442.jpg,test,Bentley Continental GT Coupe 2012,data/stanford_cars/train/05556.jpg,train,Bentley Continental GT Coupe 2007,0,true,confirmed_duplicate
+17e68dc59a1af2e3,data/stanford_cars/train/03567.jpg,train,Rolls-Royce Ghost Sedan 2012,data/stanford_cars/train/03597.jpg,val,Rolls-Royce Phantom Sedan 2012,0,true,confirmed_duplicate
+1d0777541ff1ccd3,data/stanford_cars/train/02153.jpg,val,Jeep Patriot SUV 2012,data/stanford_cars/train/02234.jpg,train,Jeep Liberty SUV 2012,0,true,confirmed_duplicate
+202e4242f91710cc,data/stanford_cars/train/07403.jpg,val,Dodge Caliber Wagon 2012,data/stanford_cars/train/07452.jpg,train,Dodge Caliber Wagon 2007,0,true,confirmed_duplicate
+2f9350d225e7dbb2,data/stanford_cars/test/02391.jpg,test,Audi V8 Sedan 1994,data/stanford_cars/train/02843.jpg,val,Audi 100 Sedan 1994,0,true,confirmed_duplicate
+30d4f1dbaedd2bf7,data/stanford_cars/train/01661.jpg,train,Hyundai Sonata Hybrid Sedan 2012,data/stanford_cars/train/04365.jpg,val,Volvo C30 Hatchback 2012,1,false,confirmed_duplicate
+33f0cc8bb6f840ec,data/stanford_cars/test/06917.jpg,test,Chevrolet Silverado 1500 Regular Cab 2012,data/stanford_cars/train/06720.jpg,train,Chevrolet Silverado 2500HD Regular Cab 2012,0,true,confirmed_duplicate
+3696023562c8c320,data/stanford_cars/test/05465.jpg,test,Bentley Continental GT Coupe 2012,data/stanford_cars/train/01502.jpg,val,Audi TTS Coupe 2012,3,false,confirmed_duplicate
+3bcb02724b57b4ec,data/stanford_cars/test/06747.jpg,test,Chevrolet Express Van 2007,data/stanford_cars/train/06517.jpg,val,Chevrolet Express Cargo Van 2007,0,true,confirmed_duplicate
+3cde1c3029f453d2,data/stanford_cars/test/03751.jpg,test,Audi TT Hatchback 2011,data/stanford_cars/train/01528.jpg,train,Audi TTS Coupe 2012,2,false,confirmed_duplicate
+451bf8879487b5f7,data/stanford_cars/test/02823.jpg,test,Audi 100 Sedan 1994,data/stanford_cars/train/02395.jpg,train,Audi V8 Sedan 1994,0,false,confirmed_duplicate
+47fa6fb4122368b5,data/stanford_cars/test/05585.jpg,test,Bugatti Veyron 16.4 Convertible 2009,data/stanford_cars/train/05705.jpg,val,Bugatti Veyron 16.4 Coupe 2009,0,true,confirmed_duplicate
+574608bb90286a63,data/stanford_cars/test/07337.jpg,test,Dodge Caliber Wagon 2007,data/stanford_cars/train/07373.jpg,train,Dodge Caliber Wagon 2012,0,true,confirmed_duplicate
+667c80b66f11bbd0,data/stanford_cars/test/03577.jpg,test,Rolls-Royce Phantom Sedan 2012,data/stanford_cars/train/03562.jpg,train,Rolls-Royce Ghost Sedan 2012,0,true,confirmed_duplicate
+717a1204515b6f4a,data/stanford_cars/test/06436.jpg,test,Chevrolet Express Cargo Van 2007,data/stanford_cars/train/06815.jpg,train,Chevrolet Express Van 2007,0,true,confirmed_duplicate
+747f18af2b18138c,data/stanford_cars/train/05039.jpg,train,BMW 6 Series Convertible 2007,data/stanford_cars/train/05263.jpg,val,BMW M6 Convertible 2010,0,false,confirmed_duplicate
+8a6cd9bed10d7313,data/stanford_cars/test/00951.jpg,test,GMC Savana Van 2012,data/stanford_cars/train/00934.jpg,train,GMC Savana Van 2012,0,true,confirmed_duplicate
+8c3a0ab5f8dde00a,data/stanford_cars/test/01232.jpg,test,HUMMER H2 SUT Crew Cab 2009,data/stanford_cars/train/01227.jpg,train,HUMMER H3T Crew Cab 2010,1,false,confirmed_duplicate
+8fe40c8806f53f4f,data/stanford_cars/test/07306.jpg,test,Dodge Caliber Wagon 2012,data/stanford_cars/train/07430.jpg,train,Dodge Caliber Wagon 2007,0,true,confirmed_duplicate
+91ccfa65e68c3f1a,data/stanford_cars/train/05503.jpg,train,Bentley Continental GT Coupe 2012,data/stanford_cars/train/05561.jpg,val,Bentley Continental GT Coupe 2007,0,true,confirmed_duplicate
+a58b6d3c683eea0e,data/stanford_cars/test/01057.jpg,test,Audi A5 Coupe 2012,data/stanford_cars/train/04634.jpg,val,Audi S5 Coupe 2012,0,true,confirmed_duplicate
+ac1d488a9c1dc404,data/stanford_cars/test/07315.jpg,test,Dodge Caliber Wagon 2012,data/stanford_cars/train/07451.jpg,train,Dodge Caliber Wagon 2007,0,true,confirmed_duplicate
+ad6200a1384e52c0,data/stanford_cars/test/07292.jpg,test,Dodge Caliber Wagon 2012,data/stanford_cars/train/07425.jpg,train,Dodge Caliber Wagon 2007,0,true,confirmed_duplicate
+b13fd334dd764883,data/stanford_cars/train/01050.jpg,val,Audi A5 Coupe 2012,data/stanford_cars/train/01532.jpg,train,Audi TTS Coupe 2012,0,true,confirmed_duplicate
+b75f1c27469ef251,data/stanford_cars/test/03704.jpg,test,Spyker C8 Coupe 2009,data/stanford_cars/train/03713.jpg,train,Spyker C8 Convertible 2009,0,true,confirmed_duplicate
+bc6da65ef7460ecc,data/stanford_cars/test/06251.jpg,test,Acura ZDX Hatchback 2012,data/stanford_cars/train/04365.jpg,val,Volvo C30 Hatchback 2012,2,false,confirmed_duplicate
+d841a2eeb97578bf,data/stanford_cars/test/07155.jpg,test,Aston Martin V8 Vantage Coupe 2012,data/stanford_cars/train/00081.jpg,val,Aston Martin Virage Coupe 2012,3,false,confirmed_duplicate
+d85f85b9346d320c,data/stanford_cars/test/06932.jpg,test,Chevrolet Silverado 1500 Regular Cab 2012,data/stanford_cars/train/06694.jpg,train,Chevrolet Silverado 2500HD Regular Cab 2012,0,false,confirmed_duplicate
+d9a6b871ac03ea0f,data/stanford_cars/test/06251.jpg,test,Acura ZDX Hatchback 2012,data/stanford_cars/train/01855.jpg,train,Hyundai Elantra Touring Hatchback 2012,3,false,confirmed_duplicate
+da0d18ccb5d203cf,data/stanford_cars/test/06429.jpg,test,Chevrolet Express Cargo Van 2007,data/stanford_cars/train/06825.jpg,train,Chevrolet Express Van 2007,0,true,confirmed_duplicate
+db11e3c77bfb6d55,data/stanford_cars/train/05641.jpg,train,Bugatti Veyron 16.4 Convertible 2009,data/stanford_cars/train/05697.jpg,val,Bugatti Veyron 16.4 Coupe 2009,0,true,confirmed_duplicate
+db2af133eb2cb000,data/stanford_cars/test/07838.jpg,test,Dodge Durango SUV 2007,data/stanford_cars/train/07045.jpg,train,Chrysler Aspen SUV 2009,0,true,confirmed_duplicate
+ddbedc9714a122c6,data/stanford_cars/test/05465.jpg,test,Bentley Continental GT Coupe 2012,data/stanford_cars/train/04746.jpg,train,Audi TT RS Coupe 2012,3,false,confirmed_duplicate
+e3cf5a4425fbe75a,data/stanford_cars/test/02804.jpg,test,Audi 100 Sedan 1994,data/stanford_cars/train/02425.jpg,val,Audi V8 Sedan 1994,0,true,confirmed_duplicate
+e4288f2a1a220a90,data/stanford_cars/test/02370.jpg,test,Audi V8 Sedan 1994,data/stanford_cars/train/02830.jpg,train,Audi 100 Sedan 1994,0,true,confirmed_duplicate
+ff1d9fb7db66852d,data/stanford_cars/train/01502.jpg,val,Audi TTS Coupe 2012,data/stanford_cars/train/04746.jpg,train,Audi TT RS Coupe 2012,0,true,confirmed_duplicate

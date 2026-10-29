@@ -20,7 +20,25 @@
 | Dataset | Image/class counts verified? | Label-map saved? | Split manifests and SHA256 | Leakage/near-duplicate audit | Status |
 | --- | --- | --- | --- | --- | --- |
 | Pakistani | 3,847 readable / 48 classes | Frozen 48-class map | Final: train 2,610; val 463; test 751; excluded 23 | 35 human-reviewed dHash candidate pairs; 23 original training images excluded; other overlaps possible | **Final overlap-screened manifest committed** |
-| Stanford Cars | Pending | Pending | Pending | Pending | Awaiting data |
+| Stanford Cars | 16,185 readable / 196 classes | Frozen 196-class map | Final: train 6,893; val 1,214; test 8,041; excluded 37. SHA-256: `968552b26c93eb1e163edc99f92e0bc722d710a547d5f290a362ae26224c0ed2` | 39 human-reviewed duplicate pairs; all confirmed; 37 images excluded; official test partition preserved | **VERIFIED — Frozen manifest** |
+
+### Stanford Cars dataset audit — 29 October 2026
+
+- **Source:** Hugging Face mirror `tanganke/stanford_cars`.
+- **Dataset revision:** `9abf6cf7d6dfa7b95152a0d6e791ea9435b47a40`.
+- **Original dataset:** 16,185 images across 196 vehicle classes.
+- **Official partitions:** 8,144 training and 8,041 testing images.
+- **Validation split:** Stratified sampling of 15% of the original training partition, using random seed 42.
+- **Overlap screening:** 39 potential cross-split duplicate pairs identified and manually reviewed; all 39 confirmed as duplicates.
+- **Exclusions:** 37 unique images excluded (29 training and 8 validation).
+- **Final frozen splits:** 6,893 training, 1,214 validation and 8,041 testing images.
+- **Test integrity:** Original test partition preserved; no test images excluded.
+- **Manifest:** `splits/stanford/final_manifest.csv`.
+- **Manifest SHA-256:** `968552b26c93eb1e163edc99f92e0bc722d710a547d5f290a362ae26224c0ed2`.
+- **Verification status:** `VERIFIED`.
+- **Verification timestamp:** 2026-10-29 15:16:51 UTC.
+
+**Reproducibility:** Both Xception and ConvNeXt-Tiny will use this identical frozen manifest. No model training or test evaluation has been performed yet.
 
 Record exactly how Pakistani video-neighbor images were handled if source/group metadata is available. For Stanford Cars, document that the official test split remained untouched during training and model selection.
 
