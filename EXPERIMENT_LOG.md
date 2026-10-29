@@ -159,3 +159,11 @@ Copy this section once for **each execution**, including failures and restarts. 
 - Trainable parameter counts were recorded.
 - No optimizer steps, training epochs or accuracy measurements were performed.
 
+These are the final measured results:
+Experiment	Test accuracy	Test macro-F1	Training time
+E1 — Pakistan / Xception	73.64%	0.6395	359.21 s
+E2 — Pakistan / ConvNeXt-Tiny	74.97%	0.6104	385.60 s
+E3 — Stanford / Xception	44.73%	0.4464	1,018.85 s
+E4 — Stanford / ConvNeXt-Tiny	52.80%	0.5217	1,064.07 s
+
+Milestone 5 — Original experiments completed (30 October 2026). All four models were trained using the shared 3+8 epoch transfer-learning protocol. Validation-selected checkpoints were evaluated on the held-out test sets, and results were archived. Subsequent extended-training experiments will be recorded separately and will not overwrite these baseline results.
