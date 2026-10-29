@@ -1,0 +1,24 @@
+relative_path,publisher_split,class_name,class_idx
+data/pakistan/Splited_dataset/train/Honda_city_2000/309.jpg,train,Honda_city_2000,10
+data/pakistan/Splited_dataset/train/Suzuki_Every/13301.jpg,train,Suzuki_Every,17
+data/pakistan/Splited_dataset/train/Suzuki_Mehran/12418.jpg,train,Suzuki_Mehran,18
+data/pakistan/Splited_dataset/train/Suzuki_Mehran/131.jpg,train,Suzuki_Mehran,18
+data/pakistan/Splited_dataset/train/Suzuki_Mehran/132.jpg,train,Suzuki_Mehran,18
+data/pakistan/Splited_dataset/train/Suzuki_Mehran/13374.jpg,train,Suzuki_Mehran,18
+data/pakistan/Splited_dataset/train/Suzuki_alto_2007/9616.jpg,train,Suzuki_alto_2007,19
+data/pakistan/Splited_dataset/train/Suzuki_cultus_2018/12256.jpg,train,Suzuki_cultus_2018,23
+data/pakistan/Splited_dataset/train/Suzuki_cultus_2018/12325.jpg,train,Suzuki_cultus_2018,23
+data/pakistan/Splited_dataset/train/Suzuki_cultus_2018/12354.jpg,train,Suzuki_cultus_2018,23
+data/pakistan/Splited_dataset/train/Suzuki_cultus_2018/13324.jpg,train,Suzuki_cultus_2018,23
+data/pakistan/Splited_dataset/train/Suzuki_cultus_2019/12400.jpg,train,Suzuki_cultus_2019,24
+data/pakistan/Splited_dataset/train/Suzuki_cultus_2019/191.jpg,train,Suzuki_cultus_2019,24
+data/pakistan/Splited_dataset/train/Suzuki_cultus_2019/285.jpg,train,Suzuki_cultus_2019,24
+data/pakistan/Splited_dataset/train/Toyota HIACE 2000/13412.jpg,train,Toyota HIACE 2000,31
+data/pakistan/Splited_dataset/train/Toyota_Hiace_2012/202.jpg,train,Toyota_Hiace_2012,33
+data/pakistan/Splited_dataset/train/Toyota_Vitz/220.jpg,train,Toyota_Vitz,38
+data/pakistan/Splited_dataset/train/Toyota_Vitz_2010/381.jpg,train,Toyota_Vitz_2010,39
+data/pakistan/Splited_dataset/train/Toyota_corolla_2016/13272.jpg,train,Toyota_corolla_2016,44
+data/pakistan/Splited_dataset/train/Toyota_corolla_2016/13278.jpg,train,Toyota_corolla_2016,44
+data/pakistan/Splited_dataset/train/Toyota_corolla_2016/20029.jpg,train,Toyota_corolla_2016,44
+data/pakistan/Splited_dataset/train/Toyota_corolla_2016/9573.jpg,train,Toyota_corolla_2016,44
+data/pakistan/Splited_dataset/train/Toyota_corolla_2016/9651.jpg,train,Toyota_corolla_2016,44

@@ -1,0 +1,17 @@
+{
+  "status": "CANDIDATE_NOT_APPROVED",
+  "source": "Mendeley 2022 dataset / publisher train+test",
+  "seed": 42,
+  "validation_fraction_of_publisher_train": 0.15,
+  "counts": {
+    "train": 2631,
+    "test": 751,
+    "val": 465
+  },
+  "class_count": 48,
+  "manifest_sha256": "97fa106c50e35fd184ea6ee8535e345599555f9af50c7ee6e2e3863b5da1ca82",
+  "dhash_hamming_threshold": 3,
+  "publisher_train_vs_test_candidate_pairs": 23,
+  "candidate_train_vs_val_candidate_pairs": 12,
+  "limitation": "dHash may miss visually near-identical frames; manual inspection/group metadata remain necessary"
+}

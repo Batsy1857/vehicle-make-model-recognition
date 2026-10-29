@@ -1,0 +1,23 @@
+{
+  "status": "CLEAN_CANDIDATE_AWAITING_APPROVAL",
+  "policy": "retain all publisher test; exclude original training members of confirmed test-linked overlap components; group remaining confirmed overlaps before split",
+  "source_manifest_sha256": "97fa106c50e35fd184ea6ee8535e345599555f9af50c7ee6e2e3863b5da1ca82",
+  "clean_manifest_sha256": "11ebb90a7a4530a2707f4d086131f93f4b3c91cae013bc6add0bc2417bff0f32",
+  "seed": 42,
+  "validation_fraction_target": 0.15,
+  "confirmed_pairs": 35,
+  "reviewed_pair_count": 35,
+  "excluded_distinct_publisher_training_images": 23,
+  "counts": {
+    "train": 2610,
+    "test": 751,
+    "val": 463,
+    "excluded_test_overlap": 23
+  },
+  "class_coverage": {
+    "test": 48,
+    "train": 48,
+    "val": 48
+  },
+  "limitation": "dHash screen and human review cannot exclude all possible visually related frames"
+}
