@@ -28,13 +28,13 @@ datasets:
       audit_near_duplicates: true
       test_is_held_out: true
     
-  verified_split_counts:
+    verified_split_counts:
       train: 2610
       val: 463
       test: 751
       excluded: 23
 
-  manifest_sha256: 11ebb90a7a4530a2707f4d086131f93f4b3c91cae013bc6add0bc2417bff0f32
+    manifest_sha256: 11ebb90a7a4530a2707f4d086131f93f4b3c91cae013bc6add0bc2417bff0f32
 
   stanford_cars:
     source: https://ieeexplore.ieee.org/abstract/document/9460843/
