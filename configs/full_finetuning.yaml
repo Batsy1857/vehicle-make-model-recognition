@@ -1,0 +1,33 @@
+# Notebook 12 / v3 — exploratory post-hoc full-backbone fine-tuning.
+# MUST NOT overwrite or reinterpret Notebook 11's v2 artifacts.
+schema_version: 1
+experiment_status: exploratory_posthoc_full_backbone
+original_config: configs/experiments.yaml
+comparison_baseline: configs/retraining.yaml
+seed: 42
+stages:
+  head_only:
+    epochs: 5
+    learning_rate: 0.001
+  full_fine_tune:
+    epochs:
+      pakistan: 40
+      stanford_cars: 40
+    peak_learning_rate: 0.00003
+    minimum_learning_rate: 0.000001
+    warmup_epochs: 2
+    warmup_start_fraction: 0.1
+    schedule: linear_warmup_cosine_by_epoch
+    early_stopping_patience: 10
+optimizer: AdamW
+weight_decay: 0.01
+checkpoint_selection: validation_macro_f1
+precision: cuda_amp_fp16
+init: timm_imagenet_pretrained_new_classifier
+image_pipeline: reuse_configs_experiments_yaml
+batch_size: reuse_configs_experiments_yaml
+full_backbone_trainable: true
+batchnorm_training_policy: affine_trainable_running_statistics_eval
+no_test_data_during_training: true
+posthoc_test_caveat: original_and_v2_test_results_inspected_before_v3_exploration
+output_directory_name: v3_runs
